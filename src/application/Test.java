@@ -1,5 +1,6 @@
 package application;
 
+import java.util.Date;
 import java.util.List;
 
 import models.dao.DaoFactory;
@@ -29,6 +30,7 @@ public class Test {
             System.out.println(obj);
         }
         System.out.println("--------------------------");
+        System.out.println();
 
         System.out.println("TEST 3: seller findAll");
         System.out.println("--------------------------");
@@ -37,5 +39,23 @@ public class Test {
             System.out.println(obj);
         }
         System.out.println("--------------------------");
+        System.out.println();
+
+        System.out.println("TEST 4: seller insert");
+        System.out.println("--------------------------");
+        Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, department);
+        sellerDao.insert(newSeller);
+        System.out.println("Inserted! New id: " + newSeller.getId());
+        System.out.println("--------------------------");
+        System.out.println();
+
+        System.out.println("TEST 5: seller insert");
+        System.out.println("--------------------------");
+        seller = sellerDao.findById(10);
+        seller.setName("Martha Wayne");
+        sellerDao.update(seller);
+        System.out.println("Update Complete");
+        System.out.println("--------------------------");
+        System.out.println();
     }
 }

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import db.DB;
-import db.DbException;
+import db.exception.DbException;
 import models.dao.SellerDao;
 import models.entities.Department;
 import models.entities.Seller;

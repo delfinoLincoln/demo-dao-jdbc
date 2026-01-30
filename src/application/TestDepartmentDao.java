@@ -13,21 +13,29 @@ public class TestDepartmentDao {
 
         DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 
-        System.out.println("TEST 1: department insert");
+        /*System.out.println("TEST 1: department insert");
         System.out.println("------------------------------");
         Department newDep = new Department(null, "Food");
         departmentDao.insert(newDep);
         System.out.println("Inserted! New id is " + newDep.getId());
         System.out.println("------------------------------");
-        System.out.println();
+        System.out.println();*/
 
-        System.out.println("TEST 2: department update");
+        /*System.out.println("TEST 2: department update");
         System.out.println("------------------------------");
         newDep.setName("Photo");
         departmentDao.update(newDep);
         System.out.println("Update completed!");
         System.out.println("------------------------------");
+        System.out.println();*/
+
+        System.out.println("TEST 3: department findById");
+        System.out.println("------------------------------");
+        Department dep = departmentDao.findById(3);
+        System.out.println(dep);
+        System.out.println("------------------------------");
         System.out.println();
+
         
         System.out.println("TEST 5: department findALL");
         System.out.println("------------------------------");

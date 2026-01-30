@@ -12,8 +12,24 @@ public class TestDepartmentDao {
         ClearScreen.cls();
 
         DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+
+        System.out.println("TEST 1: department insert");
+        System.out.println("------------------------------");
+        Department newDep = new Department(null, "Food");
+        departmentDao.insert(newDep);
+        System.out.println("Inserted! New id is " + newDep.getId());
+        System.out.println("------------------------------");
+        System.out.println();
+
+        System.out.println("TEST 2: department update");
+        System.out.println("------------------------------");
+        newDep.setName("Photo");
+        departmentDao.update(newDep);
+        System.out.println("Update completed!");
+        System.out.println("------------------------------");
+        System.out.println();
         
-        System.out.println("TEST 1: department findALL");
+        System.out.println("TEST 5: department findALL");
         System.out.println("------------------------------");
         List<Department> list = departmentDao.findAll();
         for (Department obj : list) {
@@ -21,5 +37,6 @@ public class TestDepartmentDao {
         }
         System.out.println("------------------------------");
         System.out.println();
+
     }
 }
